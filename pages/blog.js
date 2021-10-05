@@ -16,7 +16,9 @@ export default function Blog() {
       <div>
         {blogPosts.map((item) => (
           <div key={item.slug}>
-            <Link href={"/blog/${item.slug}"}>{item.title}</Link>
+            <Link as={"/blog/" + item.slug} href="/blog/[slug]">
+              <a>{item.title}</a>
+            </Link>
           </div>
         ))}
       </div>
