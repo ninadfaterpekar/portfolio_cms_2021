@@ -23,7 +23,7 @@ export default function Blog({ blogPosts }) {
   return (
     <div>
       <Head>
-        <title> Blog</title>
+        <title> Blog title</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
