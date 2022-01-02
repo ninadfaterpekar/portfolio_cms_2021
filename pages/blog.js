@@ -34,7 +34,7 @@ export default function Blog({ blogPosts }) {
         {blogPosts.map((item) => (
           <div key={item.sys.id}>
             <Link as={"/blog/" + item.fields.slug} href="/blog/[slug]">
-              <a>{item.fields.title}</a>
+              {item.fields.title}
             </Link>
           </div>
         ))}

@@ -22,42 +22,38 @@ export default function MyApp(props) {
         <title>My page</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
-        {/* CssBa
-        seline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/work">
-                <a>Work</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/work">
+              <a>Work</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Component {...pageProps} />
     </CacheProvider>
   );
 }
 
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  emotionCache: PropTypes.object,
-  pageProps: PropTypes.object.isRequired,
-};
+// MyApp.propTypes = {
+//   Component: PropTypes.elementType.isRequired,
+//   emotionCache: PropTypes.object,
+//   pageProps: PropTypes.object.isRequired,
+// };
