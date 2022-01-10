@@ -1,12 +1,155 @@
-import Link from 'next/link'
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import { Link } from "@mui/material";
+import { borderBottom } from "@mui/system";
 
-export default function Header() {
+const ResponsiveAppBar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/">
-        <a className="hover:underline">Blog</a>
-      </Link>
-      .
-    </h2>
-  )
-}
+    <AppBar
+      position="static"
+      style={{
+        background: "transparent",
+        boxShadow: "none",
+        borderBottom: "1px solid #e5e5e5",
+      }}
+    >
+      <Container maxWidth="md">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              color: "Black",
+            }}
+          >
+            Ninad Faterpekar
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "flex-end",
+              color: "Black",
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                linkButton
+                containerElement={<Link href="/" />}
+              >
+                <Typography textAlign="center">Home</Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                linkButton
+                containerElement={<Link href="/blog" />}
+              >
+                <Typography textAlign="center">Blog</Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                linkButton
+                containerElement={<Link href="/work" />}
+              >
+                <Typography textAlign="center">Work</Typography>
+              </MenuItem>
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2, display: { xs: "none", md: "flex" }, color: "Black" }}
+          >
+            Ninad Faterpekar
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{
+                  color: "Black",
+                  display: "block",
+                }}
+              >
+                Home
+              </Button>
+            </Link>
+            <Link href="/blog" style={{ textDecoration: "none" }}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ color: "Black", display: "block" }}
+              >
+                Blog
+              </Button>
+            </Link>
+            <Link href="/work" style={{ textDecoration: "none" }}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ color: "Black", display: "block" }}
+              >
+                Work
+              </Button>
+            </Link>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
+export default ResponsiveAppBar;
