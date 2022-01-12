@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
+import Layout from "../../components/layout";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -19,21 +20,22 @@ export default function blogPage({ blogPosts }) {
         <title>{blogPosts.fields.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1>{blogPosts.fields.title}</h1>
-        {/* <img src={"https:" + blogPosts.fields.heroImage.fields.file.url}></img> */}
-        <Image
-          loader={() => blogImage}
-          width={700}
-          src={blogImage}
-          height={500}
-        />
-        <p>{blogPosts.fields.body}</p>
-        <p>{blogPosts.fields.description}</p>
-        <p>{blogPosts.fields.heroImage.fields.title}</p>
-        <p>{blogPosts.fields.heroImage.fields.file.url}</p>
-      </main>
+      <Layout>
+        <main>
+          <h1>{blogPosts.fields.title}</h1>
+          {/* <img src={"https:" + blogPosts.fields.heroImage.fields.file.url}></img> */}
+          <Image
+            loader={() => blogImage}
+            width={700}
+            src={blogImage}
+            height={500}
+          />
+          <p>{blogPosts.fields.body}</p>
+          <p>{blogPosts.fields.description}</p>
+          <p>{blogPosts.fields.heroImage.fields.title}</p>
+          <p>{blogPosts.fields.heroImage.fields.file.url}</p>
+        </main>
+      </Layout>
     </div>
   );
 }

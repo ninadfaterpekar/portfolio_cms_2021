@@ -4,7 +4,9 @@ import Head from "next/head";
 import Link from "next/link";
 import * as React from "react";
 import Hero from "../components/hero";
+import Article from "../components/article";
 import Layout from "../components/layout";
+import Image from "next/image";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -12,6 +14,7 @@ let client = require("contentful").createClient({
 });
 
 export default function Home({ blogPosts }) {
+  console.log(blogPosts);
   return (
     <Layout>
       <Head>
@@ -21,7 +24,7 @@ export default function Home({ blogPosts }) {
       <Container maxWidth="md">
         <Box>
           <Hero />
-          {/* <Article sx={{ height: "60px" }} name="MyName" /> */}
+          <Article />
         </Box>
         {blogPosts.map((item) => (
           <div key={item.sys.id}>
