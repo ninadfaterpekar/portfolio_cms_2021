@@ -1,8 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Link from "next/link";
 
-export default function Article() {
+export default function Article(props) {
   return (
     <Container
       maxWidth="md"
@@ -17,7 +18,7 @@ export default function Article() {
     >
       <Box
         sx={{
-          backgroundImage: `url(${"https://tinyurl.com/2p8n5kjx"})`,
+          backgroundImage: `url(${props.imgURL})`,
           backgroundSize: "cover",
           height: "75px",
           borderRadius: 4,
@@ -32,9 +33,10 @@ export default function Article() {
           paddingLeft: 2,
         }}
       >
-        <h1 style={{ padding: 0, margin: 0 }}>This is the Blog Title</h1>
-
-        <p style={{ padding: 0, margin: 0 }}>This is blog description</p>
+        <Link as={`/blog/${props.slug}`} href={`/blog/${props.slug}`}>
+          {props.title}
+        </Link>
+        <p style={{ padding: 0, margin: 0 }}>{props.description}</p>
       </Box>
     </Container>
   );

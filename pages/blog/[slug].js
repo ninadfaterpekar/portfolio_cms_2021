@@ -3,6 +3,7 @@ import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Layout from "../../components/layout";
+import Link from "next/link";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -10,7 +11,7 @@ let client = require("contentful").createClient({
 });
 
 export default function blogPage({ blogPosts }) {
-  console.log(blogPosts);
+  // console.log(blogPosts);
 
   const blogImage = "https:" + blogPosts.fields.heroImage.fields.file.url;
 

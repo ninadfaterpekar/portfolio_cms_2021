@@ -13,8 +13,16 @@ let client = require("contentful").createClient({
   accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
 });
 
+const getImgUrl = (imageObject) => {
+  console.log(imageObject);
+  console.log(imageObject.fields.heroImage);
+  // return "https://tinyurl.com/2p8n5kjx";
+  return imageObject.fields.heroImage?.fields?.file?.url
+    ? "https:" + imageObject.fields.heroImage.fields.file.url
+    : "https://tinyurl.com/2p8n5kjx";
+};
 export default function Home({ blogPosts }) {
-  console.log(blogPosts);
+  // console.log(blogPosts);
   return (
     <Layout>
       <Head>
@@ -24,13 +32,19 @@ export default function Home({ blogPosts }) {
       <Container maxWidth="md">
         <Box>
           <Hero />
-          <Article />
         </Box>
         {blogPosts.map((item) => (
           <div key={item.sys.id}>
-            <Link as={"/blog/" + item.fields.slug} href="/blog/[slug]">
+            <Article
+              title={item.fields.title}
+              description={item.fields.description}
+              imgURL={getImgUrl(item)}
+              slug={item.fields.slug}
+            />
+
+            {/* <Link as={"/blog/" + item.fields.slug} href="/blog/[slug]">
               {item.fields.title}
-            </Link>
+            </Link> */}
           </div>
         ))}
       </Container>
