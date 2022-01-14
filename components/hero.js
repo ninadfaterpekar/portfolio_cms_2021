@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { fontSize } from "@mui/system";
 
-export default function Intro() {
+export default function Hero() {
   return (
     <Container
       maxWidth="md"
