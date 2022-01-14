@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import Head from "next/head";
 import Link from "next/link";
 import * as React from "react";
-import Hero from "../components/hero";
+import Intro from "../components/intro";
 import Article from "../components/article";
 import Layout from "../components/layout";
 import Image from "next/image";
@@ -31,7 +31,7 @@ export default function Home({ blogPosts }) {
       </Head>
       <Container maxWidth="md">
         <Box>
-          <Hero />
+          <Intro />
         </Box>
         {blogPosts.map((item) => (
           <div key={item.sys.id}>

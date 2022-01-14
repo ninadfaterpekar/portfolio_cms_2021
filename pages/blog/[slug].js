@@ -4,6 +4,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Image from "next/image";
 import Layout from "../../components/layout";
 import Link from "next/link";
+import ImgText from "../../components/imgText";
+import LeftImgSection from "../../components/leftImgSection";
+import RightImgSection from "../../components/rightImgSection";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -23,14 +26,18 @@ export default function blogPage({ blogPosts }) {
       </Head>
       <Layout>
         <main>
-          <h1>{blogPosts.fields.title}</h1>
           {/* <img src={"https:" + blogPosts.fields.heroImage.fields.file.url}></img> */}
           <Image
             loader={() => blogImage}
-            width={700}
+            layout={`responsive`}
+            width={`100vw`}
+            height={`50vw`}
             src={blogImage}
-            height={500}
           />
+          <ImgText />
+          <LeftImgSection />
+          <RightImgSection />
+          <h1>{blogPosts.fields.title}</h1>
           <p>{blogPosts.fields.body}</p>
           <p>{blogPosts.fields.description}</p>
           <p>{blogPosts.fields.heroImage.fields.title}</p>
