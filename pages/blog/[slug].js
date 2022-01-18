@@ -7,6 +7,8 @@ import Link from "next/link";
 import ImgText from "../../components/imgText";
 import LeftImgSection from "../../components/leftImgSection";
 import RightImgSection from "../../components/rightImgSection";
+import PositiveInfo from "../../components/positiveInfo";
+import NegativeInfo from "../../components/negativeInfo";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -35,13 +37,15 @@ export default function blogPage({ blogPosts }) {
             src={blogImage}
           />
           <ImgText />
+          <PositiveInfo />
           <LeftImgSection />
+          <NegativeInfo />
           <RightImgSection />
-          <h1>{blogPosts.fields.title}</h1>
+          {/* <h1>{blogPosts.fields.title}</h1>
           <p>{blogPosts.fields.body}</p>
           <p>{blogPosts.fields.description}</p>
           <p>{blogPosts.fields.heroImage.fields.title}</p>
-          <p>{blogPosts.fields.heroImage.fields.file.url}</p>
+          <p>{blogPosts.fields.heroImage.fields.file.url}</p> */}
         </main>
       </Layout>
     </div>
