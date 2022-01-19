@@ -9,7 +9,10 @@ export default function Layout({ preview, children }) {
       <Meta />
       <div>
         <Header />
-        <div className="flex min-h-screen">
+        <div
+          className="max-w-md"
+          style={{ width: "min-content", margin: "0 auto" }}
+        >
           <main>{children}</main>
         </div>
         <Footer />

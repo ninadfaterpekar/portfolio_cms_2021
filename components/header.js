@@ -44,8 +44,9 @@ const ResponsiveAppBar = () => {
               color: "Black",
             }}
           >
-            Ninad Faterpekar
+            <Link to="/">Ninad Faterpekar</Link>
           </Typography>
+
           <Box
             sx={{
               flexGrow: 1,

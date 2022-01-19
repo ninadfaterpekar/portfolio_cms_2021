@@ -25,33 +25,29 @@ export default function ImgText(props) {
           paddingBottom: "8px",
         }}
       >
-        <h1 style={{ paddingBottom: 4, margin: 0 }}>This is the Header</h1>
-        <p style={{ margin: 0, fontSize: "14px" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <h1 style={{ paddingBottom: 4, margin: 0 }}>{props.header}</h1>
+        <p style={{ margin: 0, fontSize: "14px" }}>{props.description}</p>
       </Box>
       <Box
         sx={{
-          backgroundImage: `url("https://bit.ly/3Fw0llD")`,
+          backgroundImage: `url(${props.imgURL})`,
           backgroundSize: "cover",
           borderRadius: 4,
         }}
       ></Box>
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
-        <p style={{ padding: 0, margin: 0, fontSize: "14px" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </Box>
+
+      {props.bottomDescription && (
+        <Box
+          sx={{
+            display: "flex",
+          }}
+        >
+          {" "}
+          <p style={{ padding: 0, margin: 0, fontSize: "14px" }}>
+            {props.bottomDescription}
+          </p>
+        </Box>
+      )}
     </Container>
   );
 }

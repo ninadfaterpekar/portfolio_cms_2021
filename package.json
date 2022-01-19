@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.4.0",
+    "@contentful/rich-text-types": "^15.11.1",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.2.5",

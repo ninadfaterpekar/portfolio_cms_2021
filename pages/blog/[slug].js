@@ -9,6 +9,7 @@ import LeftImgSection from "../../components/leftImgSection";
 import RightImgSection from "../../components/rightImgSection";
 import PositiveInfo from "../../components/positiveInfo";
 import NegativeInfo from "../../components/negativeInfo";
+import PostBody from "../../components/post-body";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -16,36 +17,44 @@ let client = require("contentful").createClient({
 });
 
 export default function blogPage({ blogPosts }) {
-  // console.log(blogPosts);
+  console.log(blogPosts);
 
-  const blogImage = "https:" + blogPosts.fields.heroImage.fields.file.url;
+  // const blogImage = "https:" + blogPosts.fields.heroImage.fields.file.url;
+
+  // const getImgUrl = (imageObject) => {
+  //   // return "https://tinyurl.com/2p8n5kjx";
+  //   return imageObject.fields.heroImage?.fields?.file?.url
+  //     ? "https:" + imageObject.fields.heroImage.fields.file.url
+  //     : "https://tinyurl.com/2p8n5kjx";
+  // };
+
+  // const renderContentBodyContent = (nodeType) => {
+  //   console.log("nodetype", nodeType);
+  //   switch (nodeType) {
+  //     case "heading-1": {
+  //       console.log("returning IMg texr");
+
+  //       // return <ImgText />;
+  //       return <h2>Extrract the content here somehow.</h2>;
+  //     }
+  //     case "paragraph": {
+  //       return <PositiveInfo />;
+  //     }
+  //     default: {
+  //       return "not sure what to render";
+  //     }
+  //   }
+  // };
 
   return (
     <div>
       <Head>
-        <title>{blogPosts.fields.title}</title>
+        <title>{blogPosts.fields.slug}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <main>
-          {/* <img src={"https:" + blogPosts.fields.heroImage.fields.file.url}></img> */}
-          <Image
-            loader={() => blogImage}
-            layout={`responsive`}
-            width={`100vw`}
-            height={`50vw`}
-            src={blogImage}
-          />
-          <ImgText />
-          <PositiveInfo />
-          <LeftImgSection />
-          <NegativeInfo />
-          <RightImgSection />
-          {/* <h1>{blogPosts.fields.title}</h1>
-          <p>{blogPosts.fields.body}</p>
-          <p>{blogPosts.fields.description}</p>
-          <p>{blogPosts.fields.heroImage.fields.title}</p>
-          <p>{blogPosts.fields.heroImage.fields.file.url}</p> */}
+          <PostBody content={blogPosts.fields.contentBody} />
         </main>
       </Layout>
     </div>
@@ -58,7 +67,7 @@ export async function getStaticProps({ params }) {
   });
   return {
     props: {
-      blogPosts: data.items[0],
+      blogPosts: data.items.find((item) => item.fields.slug == params.slug),
     },
   };
 }
