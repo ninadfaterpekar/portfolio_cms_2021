@@ -89,19 +89,19 @@ const ResponsiveAppBar = () => {
               >
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              <MenuItem
+              {/* <MenuItem
                 onClick={handleCloseNavMenu}
                 linkButton
                 containerElement={<Link href="/blog" />}
               >
                 <Typography textAlign="center">Blog</Typography>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem
                 onClick={handleCloseNavMenu}
                 linkButton
-                containerElement={<Link href="/work" />}
+                containerElement={<Link href="/resume" />}
               >
-                <Typography textAlign="center">Work</Typography>
+                <Typography textAlign="center">Resume</Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -131,20 +131,20 @@ const ResponsiveAppBar = () => {
                 Home
               </Button>
             </Link>
-            <Link href="/blog" style={{ textDecoration: "none" }}>
+            {/* <Link href="/blog" style={{ textDecoration: "none" }}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ color: "Black", display: "block" }}
               >
                 Blog
               </Button>
-            </Link>
-            <Link href="/work" style={{ textDecoration: "none" }}>
+            </Link> */}
+            <Link href="/resume" style={{ textDecoration: "none" }}>
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ color: "Black", display: "block" }}
               >
-                Work
+                Resume
               </Button>
             </Link>
           </Box>
