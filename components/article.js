@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Article(props) {
   return (
     <Container
-      // maxWidth="md"
+      maxWidth="md"
       sx={{
         display: "grid",
         padding: "16px 0 16px 0",
