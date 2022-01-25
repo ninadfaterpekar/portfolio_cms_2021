@@ -10,9 +10,9 @@ export default function CustomImage({ src = "", alt }) {
   return (
     <div
       style={{
-        width: "800px",
-        boxShadow:
-          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+        maxWidth: "800px",
+        border: "0.5px solid #e5e5e5",
+        borderRadius: 5,
       }}
     >
       <img

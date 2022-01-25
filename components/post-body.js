@@ -13,6 +13,14 @@ const sectionRendererOptions = {
         />
       );
     },
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p style={{ color: "rgb(59, 69, 78)", fontSize: "16px" }}>{children}</p>
+    ),
+    [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
+    [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
+    [BLOCKS.LIST_ITEM]: (node, children) => (
+      <li style={{ margin: 0, padding: 0 }}>{children}</li>
+    ),
   },
 };
 
