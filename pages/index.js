@@ -14,22 +14,14 @@ let client = require("contentful").createClient({
 });
 
 const getImgUrl = (imageObject) => {
-  console.log(imageObject);
-  console.log(imageObject.fields.heroImage);
-  // return "https://tinyurl.com/2p8n5kjx";
-  return imageObject.fields.heroImage?.fields?.file?.url
-    ? "https:" + imageObject.fields.heroImage.fields.file.url
+  return imageObject.fields.thumbnail?.fields?.file?.url
+    ? "https:" + imageObject.fields.thumbnail.fields.file.url
     : "https://tinyurl.com/2p8n5kjx";
 };
 export default function Home({ blogPosts }) {
-  // console.log(blogPosts);
   return (
     <Layout>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Container maxWidth="md">
+      <Container>
         <Box>
           <Intro />
         </Box>
@@ -41,10 +33,6 @@ export default function Home({ blogPosts }) {
               imgURL={getImgUrl(item)}
               slug={item.fields.slug}
             />
-
-            {/* <Link as={"/blog/" + item.fields.slug} href="/blog/[slug]">
-              {item.fields.title}
-            </Link> */}
           </div>
         ))}
       </Container>

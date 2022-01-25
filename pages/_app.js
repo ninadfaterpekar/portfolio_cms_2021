@@ -27,26 +27,6 @@ export async function getStaticProps() {
   };
 }
 
-const Article = ({ blogPosts }) => {
-  console.log("article is printing");
-  return (
-    <div>
-      {blogPosts &&
-        blogPosts.map((item) => (
-          <>
-            <div key={item.sys.id}>
-              <Link as={"/blog/" + item.fields.slug} href="/blog/[slug]">
-                {item.fields.title}
-              </Link>
-            </div>
-            <div>{props.name}</div>
-          </>
-        ))}
-    </div>
-  );
-  console.log("article done printing");
-};
-
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 

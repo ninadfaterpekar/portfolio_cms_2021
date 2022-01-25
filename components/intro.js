@@ -19,7 +19,8 @@ export default function Intro() {
       >
         <Box
           sx={{
-            bgcolor: "teal",
+            backgroundImage: "url(/ninadPic.jpg)",
+            backgroundSize: "cover",
             height: "75px",
             width: "75px",
             borderRadius: "50% 50%",
@@ -42,13 +43,8 @@ export default function Intro() {
             borderBottom: "1px solid #e5e5e5",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          UX | UI Designer based in Hickory, NC. I write about UX design,
+          Frontend Dev and Dogs.
         </Box>
       </Box>
     </Container>

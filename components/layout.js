@@ -1,7 +1,7 @@
-import Alert from "../components/alert";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Meta from "../components/meta";
+import Container from "@mui/material/Container";
 
 export default function Layout({ preview, children }) {
   return (
@@ -9,9 +9,9 @@ export default function Layout({ preview, children }) {
       <Meta />
       <div>
         <Header />
-        <div className="flex min-h-screen">
+        <Container maxWidth="md">
           <main>{children}</main>
-        </div>
+        </Container>
         <Footer />
       </div>
     </>
