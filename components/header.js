@@ -84,7 +84,7 @@ const ResponsiveAppBar = () => {
             >
               <MenuItem
                 onClick={handleCloseNavMenu}
-                linkButton
+                linkbutton
                 containerElement={<Link href="/" />}
               >
                 <Typography textAlign="center">Home</Typography>
@@ -98,7 +98,7 @@ const ResponsiveAppBar = () => {
               </MenuItem> */}
               <MenuItem
                 onClick={handleCloseNavMenu}
-                linkButton
+                linkbutton
                 containerElement={<Link href="/resume" />}
               >
                 <Typography textAlign="center">Resume</Typography>

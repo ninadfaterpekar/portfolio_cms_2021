@@ -14,8 +14,8 @@ let client = require("contentful").createClient({
 });
 
 const getImgUrl = (imageObject) => {
-  return imageObject.fields.heroImage?.fields?.file?.url
-    ? "https:" + imageObject.fields.heroImage.fields.file.url
+  return imageObject.fields.thumbnail?.fields?.file?.url
+    ? "https:" + imageObject.fields.thumbnail.fields.file.url
     : "https://tinyurl.com/2p8n5kjx";
 };
 export default function Home({ blogPosts }) {
