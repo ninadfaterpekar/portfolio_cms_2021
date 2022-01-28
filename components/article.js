@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "next/link";
+import { red } from "@mui/material/colors";
 
 export default function Article(props) {
   return (
@@ -13,12 +14,7 @@ export default function Article(props) {
         alignItems: "center",
         gridTemplateColumns: "75px 2fr",
         "&:hover": {
-          backgroundColor: "lightgrey",
-        },
-        "@media screen and (max-width: 480px)": {
-          "& p": {
-            display: "none",
-          },
+          backgroundColor: "#ededed",
         },
       }}
     >
@@ -37,6 +33,14 @@ export default function Article(props) {
           flexDirection: "column",
           justifyContent: "center",
           paddingLeft: 2,
+          "@media(max-width: 620px)": {
+            "& p": {
+              display: "none",
+            },
+            "& a": {
+              fontSize: "16px !important",
+            },
+          },
         }}
       >
         <Link as={`/blog/${props.slug}`} href={`/blog/${props.slug}`}>
@@ -45,6 +49,7 @@ export default function Article(props) {
               textDecoration: "none",
               fontSize: 18,
               fontWeight: 600,
+              color: "#3396FF",
             }}
           >
             {props.title}

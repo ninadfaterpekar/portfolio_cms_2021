@@ -21,20 +21,25 @@ export default function Intro() {
           sx={{
             backgroundImage: "url(/ninadPic.jpg)",
             backgroundSize: "cover",
-            height: "75px",
-            width: "8vw",
+            height: "100px",
+            width: "110px",
             borderRadius: "50% 50%",
             marginRight: "16px",
-            "@media screen and (max-width: 480px)": {
-              height: "55px",
-              width: "55px",
+            whiteSpace: "nowrap",
+            "@media(max-width: 620px)": {
+              height: "75px",
+              width: "75px",
             },
           }}
         />
         <Box
           sx={{
-            fontSize: "6vw",
+            fontSize: "3vw",
             fontWeight: 500,
+            color: "#3396FF",
+            "@media(max-width: 620px)": {
+              fontSize: "7vw",
+            },
           }}
         >
           Ninad Faterpekar
