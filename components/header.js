@@ -37,14 +37,20 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component={Link}
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
               color: "Black",
             }}
           >
-            <Link to="/">Ninad Faterpekar</Link>
+            <Link
+              href="/"
+              underline="none"
+              style={{ color: "black", textDecoration: "none !important" }}
+            >
+              Ninad Faterpekar
+            </Link>
           </Typography>
 
           <Box
@@ -89,13 +95,6 @@ const ResponsiveAppBar = () => {
               >
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              {/* <MenuItem
-                onClick={handleCloseNavMenu}
-                linkButton
-                containerElement={<Link href="/blog" />}
-              >
-                <Typography textAlign="center">Blog</Typography>
-              </MenuItem> */}
               <MenuItem
                 onClick={handleCloseNavMenu}
                 linkbutton
@@ -108,10 +107,15 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component={Link}
             sx={{ mr: 2, display: { xs: "none", md: "flex" }, color: "Black" }}
           >
-            Ninad Faterpekar
+            <Link
+              href="/"
+              style={{ color: "black", textDecoration: "none !important" }}
+            >
+              Ninad Faterpekar
+            </Link>
           </Typography>
           <Box
             sx={{
@@ -131,14 +135,6 @@ const ResponsiveAppBar = () => {
                 Home
               </Button>
             </Link>
-            {/* <Link href="/blog" style={{ textDecoration: "none" }}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ color: "Black", display: "block" }}
-              >
-                Blog
-              </Button>
-            </Link> */}
             <Link href="/resume" style={{ textDecoration: "none" }}>
               <Button
                 onClick={handleCloseNavMenu}

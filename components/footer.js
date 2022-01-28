@@ -18,9 +18,22 @@ export default function Footer() {
       position="static"
     >
       <Container maxWidth="md">
-        <Toolbar>
-          <Typography variant="body1" color="inherit">
-            © 2022 Ninad Faterpekar
+        <Toolbar
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            margin: "0 auto",
+            maxWidth: "900px",
+            paddingLeft: "24px",
+            paddingRight: "24px",
+          }}
+        >
+          <Typography
+            variant="body1"
+            color="inherit"
+            style={{ fontSize: "1.5=8vw", color: "#1b1b1b" }}
+          >
+            © 2022 Ninad Faterpekar | ninad.faterpekar@gmail.com
           </Typography>
         </Toolbar>
       </Container>

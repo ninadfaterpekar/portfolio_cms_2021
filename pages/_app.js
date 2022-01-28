@@ -1,15 +1,8 @@
 import "../styles/index.css";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
 import * as React from "react";
-import PropTypes from "prop-types";
 import Head from "next/head";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../src/createEmotionCache";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Hero from "../components/hero";
-import Post from "./posts/[slug]";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -36,7 +29,7 @@ export default function MyApp(props) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>My page</title>
+        <title>Ninad Faterpekar</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 

@@ -12,8 +12,14 @@ export default function Article(props) {
         padding: "16px 0 16px 0",
         alignItems: "center",
         gridTemplateColumns: "75px 2fr",
-        borderTop: "1px solid black",
-        borderBottom: "1px solid black",
+        "&:hover": {
+          backgroundColor: "lightgrey",
+        },
+        "@media screen and (max-width: 480px)": {
+          "& p": {
+            display: "none",
+          },
+        },
       }}
     >
       <Box
@@ -26,7 +32,7 @@ export default function Article(props) {
       ></Box>
       <Box
         sx={{
-          height: "75px",
+          maxHeight: "75px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -34,9 +40,26 @@ export default function Article(props) {
         }}
       >
         <Link as={`/blog/${props.slug}`} href={`/blog/${props.slug}`}>
-          {props.title}
+          <a
+            style={{
+              textDecoration: "none",
+              fontSize: 18,
+              fontWeight: 600,
+            }}
+          >
+            {props.title}
+          </a>
         </Link>
-        <p style={{ padding: 0, margin: 0 }}>{props.description}</p>
+        <p
+          style={{
+            paddingTop: "4px",
+            margin: 0,
+            color: "#1b1b1b",
+            fontSize: 14,
+          }}
+        >
+          {props.description}
+        </p>
       </Box>
     </Container>
   );

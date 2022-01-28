@@ -14,7 +14,29 @@ const sectionRendererOptions = {
       );
     },
     [BLOCKS.PARAGRAPH]: (node, children) => (
-      <p style={{ color: "rgb(59, 69, 78)", fontSize: "16px" }}>{children}</p>
+      <p
+        style={{
+          color: "rgb(59, 69, 78)",
+          fontSize: "14px",
+          lineHeight: "1.5em",
+          margin: 0,
+          paddingBottom: "8px",
+        }}
+      >
+        {children}
+      </p>
+    ),
+    [BLOCKS.HEADING_1]: (node, children) => (
+      <h1
+        style={{
+          lineHeight: "1.2em",
+          padding: "16px 0 16px 0",
+          margin: 0,
+          color: "#3396FF",
+        }}
+      >
+        {children}
+      </h1>
     ),
     [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
     [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
