@@ -17,7 +17,7 @@ const sectionRendererOptions = {
       <p
         style={{
           color: "rgb(59, 69, 78)",
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: "1.5em",
           margin: 0,
           paddingBottom: "8px",

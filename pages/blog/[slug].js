@@ -13,39 +13,11 @@ import PostBody from "../../components/post-body";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN,
+  accessToken: process.env.NEXT_CONTENTFUL_DELIVERY_ACCESS_TOKEN,
 });
 
 export default function blogPage({ blogPosts }) {
-  console.log(blogPosts);
-
-  // const blogImage = "https:" + blogPosts.fields.heroImage.fields.file.url;
-
-  // const getImgUrl = (imageObject) => {
-  //   // return "https://tinyurl.com/2p8n5kjx";
-  //   return imageObject.fields.heroImage?.fields?.file?.url
-  //     ? "https:" + imageObject.fields.heroImage.fields.file.url
-  //     : "https://tinyurl.com/2p8n5kjx";
-  // };
-
-  // const renderContentBodyContent = (nodeType) => {
-  //   console.log("nodetype", nodeType);
-  //   switch (nodeType) {
-  //     case "heading-1": {
-  //       console.log("returning IMg texr");
-
-  //       // return <ImgText />;
-  //       return <h2>Extrract the content here somehow.</h2>;
-  //     }
-  //     case "paragraph": {
-  //       return <PositiveInfo />;
-  //     }
-  //     default: {
-  //       return "not sure what to render";
-  //     }
-  //   }
-  // };
-
+  // console.log(blogPosts);
   return (
     <div>
       <Head>
