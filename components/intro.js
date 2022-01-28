@@ -22,14 +22,19 @@ export default function Intro() {
             backgroundImage: "url(/ninadPic.jpg)",
             backgroundSize: "cover",
             height: "75px",
-            width: "75px",
+            width: "8vw",
             borderRadius: "50% 50%",
             marginRight: "16px",
+            "@media screen and (max-width: 480px)": {
+              height: "55px",
+              width: "55px",
+            },
           }}
         />
         <Box
           sx={{
-            fontSize: 56,
+            fontSize: "6vw",
+            fontWeight: 500,
           }}
         >
           Ninad Faterpekar
@@ -38,13 +43,17 @@ export default function Intro() {
       <Box>
         <Box
           sx={{
-            fontSize: 16,
+            fontSize: 14,
+            color: "#1b1b1b",
             padding: "16px 0 16px 0",
             borderBottom: "1px solid #e5e5e5",
           }}
         >
-          UX | UI Designer based in Hickory, NC. I write about UX design,
-          Frontend Dev and Dogs.
+          UX | UI Designer based in Hickory, NC. I write about UX Design,
+          Frontend Dev and Dogs.{" "}
+          {/* <span>
+            <a href="/resume">Learn more</a>
+          </span> */}
         </Box>
       </Box>
     </Container>
