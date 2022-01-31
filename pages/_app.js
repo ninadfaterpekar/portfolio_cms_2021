@@ -37,9 +37,3 @@ export default function MyApp(props) {
     </CacheProvider>
   );
 }
-
-// MyApp.propTypes = {
-//   Component: PropTypes.elementType.isRequired,
-//   emotionCache: PropTypes.object,
-//   pageProps: PropTypes.object.isRequired,
-// };

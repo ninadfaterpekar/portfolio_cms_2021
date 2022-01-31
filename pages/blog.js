@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import { blogPosts } from "../lib/data";
 import Link from "next/link";
 
 let client = require("contentful").createClient({
