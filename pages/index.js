@@ -1,12 +1,9 @@
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Head from "next/head";
-import Link from "next/link";
+
 import * as React from "react";
 import Intro from "../components/intro";
 import Article from "../components/article";
 import Layout from "../components/layout";
-import Image from "next/image";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -21,7 +18,6 @@ const getImgUrl = (imageObject) => {
 export default function Home({ blogPosts }) {
   return (
     <Layout>
-      {/* <Container> */}
       <Box>
         <Intro />
       </Box>
@@ -35,7 +31,6 @@ export default function Home({ blogPosts }) {
           />
         </div>
       ))}
-      {/* </Container> */}
     </Layout>
   );
 }
