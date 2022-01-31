@@ -34,22 +34,24 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="md">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-              color: "Black",
-            }}
-          >
+          <Typography>
             <Link
               href="/"
-              underline="none"
-              style={{ color: "black", textDecoration: "none !important" }}
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+                color: "Black",
+                textDecoration: "none !important",
+              }}
             >
-              Ninad Faterpekar
+              <Button
+                sx={{
+                  color: "Black",
+                  display: "block",
+                }}
+              >
+                Ninad Faterpekar
+              </Button>
             </Link>
           </Typography>
 
@@ -90,33 +92,41 @@ const ResponsiveAppBar = () => {
             >
               <MenuItem
                 onClick={handleCloseNavMenu}
-                linkbutton
+                linkbutton="true"
                 containerElement={<Link href="/" />}
               >
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
               <MenuItem
                 onClick={handleCloseNavMenu}
-                linkbutton
+                linkbutton="true"
                 containerElement={<Link href="/resume" />}
               >
                 <Typography textAlign="center">Resume</Typography>
               </MenuItem>
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            sx={{ mr: 2, display: { xs: "none", md: "flex" }, color: "Black" }}
-          >
+          <Typography>
             <Link
               href="/"
-              style={{ color: "black", textDecoration: "none !important" }}
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                color: "Black",
+                textDecoration: "none !important",
+              }}
             >
-              Ninad Faterpekar
+              <Button
+                sx={{
+                  color: "Black",
+                  display: "block",
+                }}
+              >
+                Ninad Faterpekar
+              </Button>
             </Link>
           </Typography>
+
           <Box
             sx={{
               flexGrow: 1,

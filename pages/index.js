@@ -21,21 +21,21 @@ const getImgUrl = (imageObject) => {
 export default function Home({ blogPosts }) {
   return (
     <Layout>
-      <Container>
-        <Box>
-          <Intro />
-        </Box>
-        {blogPosts.map((item) => (
-          <div key={item.sys.id}>
-            <Article
-              title={item.fields.title}
-              description={item.fields.description}
-              imgURL={getImgUrl(item)}
-              slug={item.fields.slug}
-            />
-          </div>
-        ))}
-      </Container>
+      {/* <Container> */}
+      <Box>
+        <Intro />
+      </Box>
+      {blogPosts.map((item) => (
+        <div key={item.sys.id}>
+          <Article
+            title={item.fields.title}
+            description={item.fields.description}
+            imgURL={getImgUrl(item)}
+            slug={item.fields.slug}
+          />
+        </div>
+      ))}
+      {/* </Container> */}
     </Layout>
   );
 }

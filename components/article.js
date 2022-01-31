@@ -2,15 +2,15 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "next/link";
-import { red } from "@mui/material/colors";
 
 export default function Article(props) {
   return (
     <Container
+      className="RealShit"
       maxWidth="md"
       sx={{
         display: "grid",
-        padding: "16px 0 16px 0",
+        padding: "16px 0 16px 0 !important",
         alignItems: "center",
         gridTemplateColumns: "75px 2fr",
         "&:hover": {
@@ -48,8 +48,11 @@ export default function Article(props) {
             style={{
               textDecoration: "none",
               fontSize: 18,
-              fontWeight: 600,
-              color: "#3396FF",
+              fontWeight: 500,
+              color: "#336699",
+              "&:hover": {
+                textDecoration: "underline !important",
+              },
             }}
           >
             {props.title}
@@ -59,7 +62,7 @@ export default function Article(props) {
           style={{
             paddingTop: "4px",
             margin: 0,
-            color: "#1b1b1b",
+            color: "#424242",
             fontSize: 14,
           }}
         >

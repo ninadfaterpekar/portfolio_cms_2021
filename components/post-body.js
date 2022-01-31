@@ -32,7 +32,7 @@ const sectionRendererOptions = {
           lineHeight: "1.2em",
           padding: "16px 0 16px 0",
           margin: 0,
-          color: "#3396FF",
+          color: "black",
         }}
       >
         {children}
