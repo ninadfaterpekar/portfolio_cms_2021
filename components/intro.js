@@ -6,11 +6,15 @@ import { fontSize } from "@mui/system";
 export default function Intro() {
   return (
     <Container
+      className="HelloUnited"
       maxWidth="md"
-      sx={{ paddingTop: "24px", display: "flex", flexDirection: "column" }}
+      sx={{
+        padding: "24px 0 0 0 !important",
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       <Box
-        className="HelloUnited"
         sx={{
           width: "100%",
           display: "flex",
@@ -36,7 +40,7 @@ export default function Intro() {
           sx={{
             fontSize: "3vw",
             fontWeight: 500,
-            color: "#3396FF",
+            color: "Black",
             "@media(max-width: 620px)": {
               fontSize: "7vw",
             },
