@@ -34,26 +34,15 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="md">
         <Toolbar disableGutters>
-          <Typography>
-            <Link
-              href="/"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-                color: "Black",
-                textDecoration: "none !important",
-              }}
-            >
-              <Button
-                sx={{
-                  color: "Black",
-                  display: "block",
-                }}
-              >
-                Ninad Faterpekar
-              </Button>
-            </Link>
-          </Typography>
+          <Link
+            href="/"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            <img height="60" src="/logo/header_main.png" />
+          </Link>
 
           <Box
             sx={{
@@ -90,20 +79,40 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                linkbutton="true"
-                containerElement={<Link href="/" />}
+              <Link
+                href="/"
+                sx={{
+                  textDecoration: "none !important",
+                }}
               >
-                <Typography textAlign="center">Home</Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                linkbutton="true"
-                containerElement={<Link href="/resume" />}
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Button
+                    sx={{
+                      color: "#336699",
+                      display: "block",
+                    }}
+                  >
+                    Home
+                  </Button>
+                </MenuItem>
+              </Link>
+              <Link
+                href="/resume"
+                sx={{
+                  textDecoration: "none !important",
+                }}
               >
-                <Typography textAlign="center">Resume</Typography>
-              </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Button
+                    sx={{
+                      color: "#336699",
+                      display: "block",
+                    }}
+                  >
+                    Resume
+                  </Button>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
           <Typography>
@@ -112,18 +121,9 @@ const ResponsiveAppBar = () => {
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
-                color: "Black",
-                textDecoration: "none !important",
               }}
             >
-              <Button
-                sx={{
-                  color: "Black",
-                  display: "block",
-                }}
-              >
-                Ninad Faterpekar
-              </Button>
+              <img src="/logo/header_mainCapital.png" height="60" />
             </Link>
           </Typography>
 
@@ -138,7 +138,7 @@ const ResponsiveAppBar = () => {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{
-                  color: "Black",
+                  color: "#336699",
                   display: "block",
                 }}
               >
@@ -148,7 +148,7 @@ const ResponsiveAppBar = () => {
             <Link href="/resume" style={{ textDecoration: "none" }}>
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ color: "Black", display: "block" }}
+                sx={{ color: "#336699", display: "block" }}
               >
                 Resume
               </Button>
