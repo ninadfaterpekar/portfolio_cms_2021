@@ -29,7 +29,7 @@ const ResponsiveAppBar = () => {
       style={{
         background: "transparent",
         boxShadow: "none",
-        borderBottom: "1px solid #e5e5e5",
+        borderBottom: "1.1px solid #e5e5e5",
       }}
     >
       <Container maxWidth="md">
