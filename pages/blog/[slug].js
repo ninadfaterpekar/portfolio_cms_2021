@@ -13,8 +13,9 @@ import PostBody from "../../components/post-body";
 
 let client = require("contentful").createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ||
-    "qAarRWIruOPFz-MIlM056yuwQz6AER_ThexbZg_w_sI",,
+  accessToken:
+    process.env.process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ||
+    "qAarRWIruOPFz-MIlM056yuwQz6AER_ThexbZg_w_sI",
 });
 
 export default function blogPage({ blogPosts }) {
