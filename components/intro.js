@@ -60,9 +60,6 @@ export default function Intro() {
         >
           UX | UI Designer based in Hickory, NC. I write about UX Design,
           Frontend Dev and Dogs.{" "}
-          {/* <span>
-            <a href="/resume">Learn more</a>
-          </span> */}
         </Box>
       </Box>
     </Container>
