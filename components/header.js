@@ -41,7 +41,7 @@ const ResponsiveAppBar = () => {
               display: { xs: "flex", md: "none" },
             }}
           >
-            <img height="60" src="/logo/header_main.png" />
+            <img height="60" src="/Logo/whole_horizontalMain.png" />
           </Link>
 
           <Box
@@ -123,7 +123,7 @@ const ResponsiveAppBar = () => {
                 display: { xs: "none", md: "flex" },
               }}
             >
-              <img src="/logo/header_mainCapital.png" height="60" />
+              <img src="/Logo/whole_horizontalMain.png" height="60" />
             </Link>
           </Typography>
 
