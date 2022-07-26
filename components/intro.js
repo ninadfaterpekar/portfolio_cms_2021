@@ -58,8 +58,7 @@ export default function Intro() {
             borderBottom: "1px solid #e5e5e5",
           }}
         >
-          UX | UI Designer based in Hickory, NC. I write about UX Design,
-          Frontend Dev and Dogs.{" "}
+          UX | UI Designer based in Hickory, NC.
         </Box>
       </Box>
     </Container>
